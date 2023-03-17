@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker run -t sg/configserver'
+                    sh 'docker build'
                 }
             }
         }
