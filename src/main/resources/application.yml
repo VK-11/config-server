@@ -20,4 +20,6 @@ spring:
         prefer-ip-address: true
         register: true
         enabled: true
+        acl-token: vikas
+
 
