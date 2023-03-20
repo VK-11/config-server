@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes[0]:
+        id: customer-portal
+        uri: lb://customer-portal
+        predicates:
+          - Path=/api/customer-portal/**
+      routes[1]:
+        id: advance-salary
+        uri: lb://advance-salary
+        predicates:
+          - Path=/api/advance-salary/**
