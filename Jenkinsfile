@@ -16,8 +16,16 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'podman build -t config-server-img:0.0.1 -f ./Dockerfile .'
+                   sh 'docker build -t config-server-img:1.0 .'
                 }
+            }
+        }
+        stage('Deploy Docker Image') {
+            steps {
+
+                    sh 'docker tag config-server-img:1.0 vikaskaushik93/config-server-img:1.0'
+                    sh 'docker login --username=$dockerhub_USR --password=$dockerhub_PSW'
+                    sh 'docker push vikaskaushik93/config-server-img:1.0'
             }
         }
     }
