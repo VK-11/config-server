@@ -10,7 +10,7 @@ pipeline{
         stage('Build Maven') {
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/feature/config-server']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/VK-11/config-server.git']]])
-                sh 'mvn clean install -DskipTests'
+                sh 'echo $JAVA_HOME | mvn clean install -DskipTests'
             }
         }
         stage('Build Docker Image') {
