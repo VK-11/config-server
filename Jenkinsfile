@@ -16,16 +16,18 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t config-server-img:1.0 .'
+                    sh 'podman build -t config-server-img:0.0.1 -f ./Dockerfile .'
                 }
             }
         }
         stage('Deploy Docker Image') {
             steps {
-
-                    sh 'docker tag config-server-img:1.0 vikaskaushik93/config-server-img:1.0'
-                    sh 'docker login -u $dockerhub_USR --password-stdin'
-                    sh 'docker push vikaskaushik93/config-server-img:1.0'
+//                     sh 'podman push --tls-verify=false config-server-img:0.0.1 docker://10.155.15.12:8888/tawal-notifications:0.0.1'
+//
+//                     
+//                     sh 'docker tag config-server-img:1.0 vikaskaushik93/config-server-img:1.0'
+//                     sh 'docker login --username=$dockerhub_USR --password=$dockerhub_PSW'
+//                     sh 'docker push vikaskaushik93/config-server-img:1.0'
             }
         }
     }
