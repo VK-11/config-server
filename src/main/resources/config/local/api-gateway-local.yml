@@ -1,4 +1,9 @@
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/sg_dev_customer
   cloud:
     gateway:
       routes[0]:
@@ -11,3 +16,4 @@ spring:
         uri: lb://advance-salary
         predicates:
           - Path=/api/advance-salary/**
+
