@@ -69,8 +69,8 @@
                     <from>
                         <image>eclipse-temurin:11.0.19_7-jre-alpine</image>
                         <auth>
-                            <username>vikaskaushik93</username>
-                            <password>TheVortex$11</password>
+                            <username>vikas</username>
+                            <password>vikas</password>
                         </auth>
                     </from>
                     <allowInsecureRegistries>true</allowInsecureRegistries>
@@ -82,6 +82,7 @@
                             <password>vikas</password>
                         </auth>
                     </to>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
 
                 </configuration>
                 <executions>
