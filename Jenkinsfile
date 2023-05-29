@@ -33,7 +33,7 @@ pipeline{
         stage('Deploy Docker Image') {
             steps {
 
-                    sh 'docker tag config-server-img:1.0 configServer/config-server-img:1.0'
+                    sh 'docker tag config-server-img:1.0 config-server/config-server-img:1.0'
                     sh 'docker login 172.23.96.1:10082 --username=vikas --password=vikas'
                     sh 'docker push configServer/config-server-img:1.0'
             }
