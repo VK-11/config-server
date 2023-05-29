@@ -20,7 +20,7 @@ pipeline{
         stage('Build Maven') {
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/feature/config-server']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/VK-11/config-server.git']]])
-                sh "mvn clean install -DskipTests"
+                sh "mvn clean install -DskipTests -DsendCredentialsOverHttp=true"
             }
         }
         stage('Build Docker Image') {
