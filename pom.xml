@@ -76,7 +76,7 @@
                     <allowInsecureRegistries>true</allowInsecureRegistries>
 
                     <to>
-                        <image>localhost:10082/${project.artifactId}:${project.version}</image>
+                        <image>172.23.96.1:10082/${project.artifactId}:${project.version}</image>
                         <auth>
                             <username>vikas</username>
                             <password>vikas</password>
