@@ -1,4 +1,4 @@
-FROM openjdk:11.0.10-jre-slim
+FROM eclipse-temurin:11.0.19_7-jre-alpine
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} /sg-configserver.jar
-ENTRYPOINT ["java","-jar","/sg-configserver.jar"]
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
