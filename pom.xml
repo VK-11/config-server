@@ -66,14 +66,6 @@
                 <version>3.3.1</version>
                 <configuration>
                     <allowInsecureRegistries>true</allowInsecureRegistries>
-                    <from>
-                        <image>eclipse-temurin:11.0.19_7-jre-alpine</image>
-                        <auth>
-                            <username>vikaskaushik93</username>
-                            <password>TheVortex$11</password>
-                        </auth>
-                    </from>
-                    <allowInsecureRegistries>true</allowInsecureRegistries>
 
                     <to>
                         <image>172.23.96.1:10082/${project.artifactId}:${project.version}</image>
@@ -82,8 +74,6 @@
                             <password>vikas</password>
                         </auth>
                     </to>
-                    <allowInsecureRegistries>true</allowInsecureRegistries>
-
                 </configuration>
                 <executions>
                     <execution>
