@@ -1,11 +1,11 @@
 pipeline{
     agent any
+
     tools {
-        maven 'MVN_HOME'
-    }
-    environment {
-    dockerhub = credentials('dockerhub')
-    }
+            maven 'maven-3.9.0'
+            jdk 'openjdk11'
+        }
+
     stages {
 
         stage('Build Maven') {
