@@ -15,7 +15,7 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                   sh 'docker build -t config-server-img:1.0 -f ./Dockerfile.layered .'
+                   sh 'docker build -t config-server-img:1.0 -f ./Dockerfile .'
                 }
             }
         }
