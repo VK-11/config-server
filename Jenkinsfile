@@ -7,26 +7,17 @@ pipeline{
     dockerhub = credentials('dockerhub')
     }
     stages {
-        stage('Verify tools') {
-            steps {
-                    sh '''
-                        docker info
-                        docker version
-                        docker compose version
-                        curl --version
-                      '''
-            }
-        }
+
         stage('Build Maven') {
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/feature/config-server']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/VK-11/config-server.git']]])
-                sh "mvn clean install -DskipTests -DsendCredentialsOverHttp=true"
+                sh "mvn clean install -DskipTests"
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                   sh 'docker build -t config-server-img:1.0 -f ./Dockerfile .'
+                   sh 'docker build -t config-server-img:1.0 -f ./Dockerfile.layered .'
                 }
             }
         }
