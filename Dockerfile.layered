@@ -1,7 +1,7 @@
 FROM eclipse-temurin:11.0.19_7-jre-alpine as builder
 WORKDIR extracted
 ADD target/*.jar app.jar
-RUN java -Djarmode=layertools -jar app.jar
+RUN java -Djarmode=layertools -jar app.jar extract
 
 FROM eclipse-temurin:11.0.19_7-jre-alpine
 WORKDIR application
